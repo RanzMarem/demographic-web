@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fill Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        let count = 1;
+        function addEntry() {
+            count++;
+            const container = document.getElementById('entries');
+            const div = document.createElement('div');
+            div.className = "entry";
+            div.innerHTML = `
+                <input type="text" name="name" placeholder="Full Name" required>
+                
+                <select name="age" required>
+                    <option value="">Select Age</option>
+                    <option value="12 and below">12 and below</option>
+                    <option value="13-18">13-18</option>
+                    <option value="19-25">19-25</option>
+                    <option value="26-30">26-30</option>
+                    <option value="31-40">31-40</option>
+                    <option value="41-50">41-50</option>
+                    <option value="51-60">51-60</option>
+                    <option value="61 and above">61 and above</option>
+                </select>
+
+                <select name="sex" required>
+                    <option value="">Select Sex</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="text" name="address" placeholder="Address" required>
+            `;
+            container.appendChild(div);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Demographic Data Form</h2>
+        <form method="POST">
+            <div id="entries">
+                <div class="entry">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    
+                    <select name="age" required>
+                        <option value="">Select Age</option>
+                        <option value="12 and below">12 and below</option>
+                        <option value="13-18">13-18</option>
+                        <option value="19-25">19-25</option>
+                        <option value="26-30">26-30</option>
+                        <option value="31-40">31-40</option>
+                        <option value="41-50">41-50</option>
+                        <option value="51-60">51-60</option>
+                        <option value="61 and above">61 and above</option>
+                    </select>
+
+                    <select name="sex" required>
+                        <option value="">Select Sex</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <input type="text" name="address" placeholder="Address" required>
+                </div>
+            </div>
+            <button type="button" onclick="addEntry()">Add Another Person</button>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
