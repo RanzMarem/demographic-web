@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demographic Form</title>
+</head>
+<body>
+
+<h2>Demographic Form</h2>
+
+<form method="POST">
+    <div id="form-area">
+        <div>
+            <input name="name" placeholder="Full Name" required><br>
+            <input name="age" placeholder="Age" required><br>
+            <select name="sex">
+                <option>Male</option>
+                <option>Female</option>
+            </select><br>
+            <input name="address" placeholder="Address" required><br><br>
+        </div>
+    </div>
+
+    <button type="button" onclick="addForm()">Add Another</button><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function addForm() {
+    let formArea = document.getElementById("form-area");
+
+    let newForm = `
+    <div>
+        <input name="name" placeholder="Full Name" required><br>
+        <input name="age" placeholder="Age" required><br>
+        <select name="sex">
+            <option>Male</option>
+            <option>Female</option>
+        </select><br>
+        <input name="address" placeholder="Address" required><br><br>
+    </div>
+    `;
+
+    formArea.innerHTML += newForm;
+}
+</script>
+
+</body>
+</html>
