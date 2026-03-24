@@ -35,6 +35,7 @@ def form():
 def success():
     return "<h2>Data saved successfully!</h2><a href='/'>Back</a>"
 
+create_file()
+
 if __name__ == "__main__":
-    create_file()
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run()
